@@ -9,8 +9,8 @@ export function HelloWorld() {
      }
      return (
           <div>
-               <HeaderHelloWorld text="dikasih bang, semangat belajar"/>
-               <ParagraphHelloWorld text="dikasih juga bah"/>
+               <HeaderHelloWorld header={props.header}/>
+               <ParagraphHelloWorld paraghraph={props.paraghraph}/>
           </div>
      )
 }
@@ -18,23 +18,23 @@ export function HelloWorld() {
 export default HelloWorld;
 
 
-export function HeaderHelloWorld({text = "lupa ngasih header bang"}) {
+export function HeaderHelloWorld({ header }) {
      return (
           <div>
-               <h1 style={{ color:"red", backgroundColor:"aqua" }}>{text.toUpperCase()}</h1>
+               <h1 style={{ color:"red", backgroundColor:"aqua" }}>{ header.text.toUpperCase() }</h1>
 
           </div>
      )
 }
 
-export function ParagraphHelloWorld({text = "lupda ngasih paraghraph"}) {
+export function ParagraphHelloWorld({ paraghraph }) {
      const style = {
           color: "blue",
           backgroundColor: "yellow"
      }
      return (
           <div>
-               <p style={style}>{ text.toUpperCase()}</p>
+               <p style={style}>{ paraghraph.text.toUpperCase()}</p>
           </div>
           )
 }
