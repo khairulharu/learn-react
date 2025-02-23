@@ -1,16 +1,16 @@
 export function HelloWorld() {
      const props = {
           header: {
-               text: "belajar react dasar halo dek, terjadi perubahan, test hot reloading"
+               text: "belajar react dasar halo dek, terjadi perubahan, test speard syntax"
           },
           paraghraph: {
-               text: "belajar react dasar halo dek, terjadi perubahan, test hot reloading"
+               text: "belajar react dasar halo dek, terjadi perubahan, test hot reloading, nama saya khairul aswad"
           }
      }
      return (
           <div>
-               <HeaderHelloWorld header={props.header}/>
-               <ParagraphHelloWorld paraghraph={props.paraghraph}/>
+               <HeaderHelloWorld {...props}/>
+               <ParagraphHelloWorld {...props}/>
           </div>
      )
 }
