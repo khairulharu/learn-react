@@ -1,0 +1,43 @@
+#root {
+     max-width: 1280px;
+     margin: 0 auto;
+}
+
+.header {
+     color: blue;
+     background-color: yellow;
+}
+
+.description {
+     font-weight: bold;
+     background-color: aquamarine;
+}
+
+.title {
+     color: blanchedalmond;
+     background-color: blueviolet;
+}
+
+.title:hover {
+     transition: all;
+     animation-delay: 300;
+     color: aqua;
+     background-color: brown;
+}
+
+.footer {
+     color: brown;
+     text-align: center;
+}
+
+@keyframes changeColors {
+     0% { background-color: green;}
+     25% { background-color: purple;}
+     50% { background-color: red;}
+     75% { background-color: orange;}
+     100% { background-color: rgb(0, 253, 21);}
+}
+
+.animated-text {
+     animation: changeColors 2s infinite;
+}

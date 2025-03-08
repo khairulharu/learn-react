@@ -1,9 +1,9 @@
 export function HelloWorld() {
      const props = {
-          header: {
-               text: "belajar react dasar halo dek, terjadi perubahan, test speard syntax"
+          title: {
+               text: "Kumpulan Portofolio Saya"
           },
-          paraghraph: {
+          description: {
                text: "belajar react dasar halo dek, terjadi perubahan, test hot reloading, nama saya khairul aswad"
           }
      }
@@ -18,23 +18,19 @@ export function HelloWorld() {
 export default HelloWorld;
 
 
-export function HeaderHelloWorld({ header }) {
+export function HeaderHelloWorld({ title }) {
      return (
           <div>
-               <h1 style={{ color:"red", backgroundColor:"aqua" }}>{ header.text.toUpperCase() }</h1>
+               <h1 className="title">{title.text.toUpperCase()}</h1>
 
           </div>
      )
 }
 
-export function ParagraphHelloWorld({ paraghraph }) {
-     const style = {
-          color: "blue",
-          backgroundColor: "yellow"
-     }
+export function ParagraphHelloWorld({ description }) {
      return (
           <div>
-               <p style={style}>{ paraghraph.text.toUpperCase()}</p>
+               <p className="description">{description.text.toUpperCase()}</p>
           </div>
           )
 }
