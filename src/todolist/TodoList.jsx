@@ -31,6 +31,7 @@ export default function TodoList() {
      return (
           <ul>
                {data.map((todo, index) => (
+                    ////////////////// ini spread operator ... itu spread
                     <Todo key={index} {...todo}/>
                ))}
           </ul>
