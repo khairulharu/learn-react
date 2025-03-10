@@ -16,7 +16,9 @@ createRoot(document.getElementById("root")).render(
             <Table/>
 
             <AlertButton text={"Klik ME Bang"} message={"halo bang ini message"}/>
-            <MyButton text={"SMashME"} onSmash={function onSmash() {alert("you smasing me")}}/>
+            
+            <MyButton text={"SMashME"} onSmash={() => alert("you smashing this button")}/>
+            <MyButton text={"Smash ME Buddy"} onSmash={() => alert("you clicked buddy button right")}/>
         </Container>
      </StrictMode> 
 )
