@@ -8,6 +8,7 @@ import Table from "../table/Table";
 import AlertButton from "../button/AlertButton";
 import MyButton from "../button/MyButton";
 import Toolbar from "../button/ToolBar";
+import SearchFrom from "../form/SearchFrom";
 
 createRoot(document.getElementById("root")).render(
      <StrictMode>
@@ -25,6 +26,8 @@ createRoot(document.getElementById("root")).render(
                 e.stopPropagation()
                 alert("Yout click toolbar")
             }}/>
+
+            <SearchFrom/>
         </Container>
      </StrictMode> 
 )
