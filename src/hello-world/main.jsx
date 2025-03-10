@@ -7,6 +7,7 @@ import TodoList from "../todolist/TodoList";
 import Table from "../table/Table";
 import AlertButton from "../button/AlertButton";
 import MyButton from "../button/MyButton";
+import Toolbar from "../button/ToolBar";
 
 createRoot(document.getElementById("root")).render(
      <StrictMode>
@@ -19,6 +20,11 @@ createRoot(document.getElementById("root")).render(
             
             <MyButton text={"SMashME"} onSmash={() => alert("you smashing this button")}/>
             <MyButton text={"Smash ME Buddy"} onSmash={() => alert("you clicked buddy button right")}/>
+
+            <Toolbar onClick={(e) => {
+                e.stopPropagation()
+                alert("Yout click toolbar")
+            }}/>
         </Container>
      </StrictMode> 
 )
