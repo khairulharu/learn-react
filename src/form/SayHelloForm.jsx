@@ -1,9 +1,11 @@
+import { useState } from "react"
+
 export default function SayHelloForm() {
+     let [value, setValue] = useState("Hello World")
 
      function handleClick(e) {
           e.preventDefault()
-          const name = document.getElementById("input_name").value
-          document.getElementById("text_hello").innerText = `HELLO ${name.toUpperCase()}`
+          setValue(document.getElementById("input_name").value)
      }
 
      return (
@@ -12,7 +14,7 @@ export default function SayHelloForm() {
                     <input id="input_name"/>
                     <button onClick={handleClick}>Say Hello</button>
                </form>
-               <h1 id="text_hello">Hello World</h1>
+               <h1 id="text_hello">Hello {value}</h1>
           </div>
      )
 }
