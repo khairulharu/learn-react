@@ -1,19 +1,26 @@
-import { useState } from "react"
+import { useImmer } from "use-immer"
 
 const contactType = {
      name: "",
-     message: ""
+     message: "",
+     description: {
+          title: ""
+     }
 }
 
 export default function ContactForm() {
-     const [contact, setContact] = useState(contactType)
+     const [contact, setContact] = useImmer(contactType)
      
      function handleNameChange(e) {
-          setContact({...contact, name: e.target.value})
+          setContact(draft => {
+               draft.name = e.target.value
+          })
      }
 
      function handleMessageChange(e) {
-          setContact({...contact, message: e.target.value})
+          setContact(draft => {
+               draft.message = e.target.value
+          })
      }
 
      return (
@@ -27,7 +34,6 @@ export default function ContactForm() {
                <h1>Contact Detail</h1>
                <p>Name: {contact.name}</p>
                <p>Message: {contact.message}</p>
-               <p>Description: {contact.description.title}</p>
           </div>
      )
 }
