@@ -2,10 +2,7 @@ import { useState } from "react"
 
 const contactType = {
      name: "",
-     message: "",
-     description: {
-          title: ""
-     }
+     message: ""
 }
 
 export default function ContactForm() {
@@ -19,10 +16,6 @@ export default function ContactForm() {
           setContact({...contact, message: e.target.value})
      }
 
-     function handleDescriptionChange(e) {
-          setContact({...contact, description: { title: e.target.value}})
-     }
-
      return (
           <div>
                <h1>Contact Form</h1>
@@ -30,8 +23,6 @@ export default function ContactForm() {
                     <input type="text" placeholder="Name" value={contact.name} onChange={handleNameChange}/>
                     <br />
                     <input type="text" placeholder="Message" value={contact.message} onChange={handleMessageChange} />
-                    <br />
-                    <input type="text" placeholder="Description" value={contact.description.title} onChange={handleDescriptionChange} />
                </form>
                <h1>Contact Detail</h1>
                <p>Name: {contact.name}</p>
