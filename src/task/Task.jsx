@@ -22,17 +22,25 @@ export default function Task() {
           }
      }
 
+     function handleButtonClick(e) {
+          setItems((draft) => {
+               draft.reduce()
+          })
+     }
+
      return (
           <div>
                <h1>Create Task</h1>
                <form>
-                    <input type="text" value={item} onChange={handleChange}/>
+                    <input type="text" placeholder="add task here" value={item} onChange={handleChange}/>
                     <button onClick={handleClick}>Add</button>
                </form>
                <h1>List Task</h1>
                <ul>
-                    {items.map((item, index) => 
-                         <li key={index}>{item}</li>
+                    {items.map((item, index) =>
+                         <div key={index}>
+                              <li>{item}</li> <button id="index" onClick={handleButtonClick}>DELETE</button>
+                         </div>
                     )}
                </ul>
           </div>
