@@ -11,8 +11,9 @@ export default function Task() {
 
      function handleClick(e) {
           e.preventDefault()
+          
           if (item === "") {
-               alert("you must be type something")
+               alert("you must be type something");
           } else {
                setItems((draft) => {
                     draft.push(item);
