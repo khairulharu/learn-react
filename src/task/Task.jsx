@@ -23,8 +23,12 @@ export default function Task() {
      }
 
      function handleButtonClick(e) {
+
+          console.log(e.target.value)
           setItems((draft) => {
-               draft.reduce()
+               draft.filter((value)=> {
+                    value != e.target.value
+               })
           })
      }
 
@@ -39,7 +43,7 @@ export default function Task() {
                <ul>
                     {items.map((item, index) =>
                          <div key={index}>
-                              <li>{item}</li> <button id="index" onClick={handleButtonClick}>DELETE</button>
+                              <li>{item}</li> <button id="index" onClick={handleButtonClick} value={item}>DELETE</button>
                          </div>
                     )}
                </ul>
