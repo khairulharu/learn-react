@@ -10,17 +10,8 @@ export default function CounterApp() {
 
      return (
           <div>
-               { show2 ? (
-                    <div>
-                         <Counter name="2"/>
-                    </div>
-               ) : (
-                    <section>
-                         <Counter name="1"/>
-                    </section>
-               )
-               }
+              {show2 ? <Counter key="1" name="Budi"/> : <Counter key="2" name="Putangina"/>}
                <input type="checkbox" checked={show2} onChange={handleChange}/>Tampilkan show 2
           </div>
      )
-}
+}    
