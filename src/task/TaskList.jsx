@@ -1,11 +1,13 @@
-export default function TaskList({items = []}) {
+import Task from "./Task";
+
+export default function TaskList({tasks, onChange, onDelete}) {
      return (
-          <>
-               <ul>
-                    {items.map((item, index) => (
-                         <li key={index}>{item}</li>
-                    ))}
-               </ul>
-          </>
+          <ul>
+               {tasks.map(task => (
+                    <li key={task.id}>
+                         <Task task={task} onChange={onChange} onDelete={onDelete}/>
+                    </li>
+               ))}
+          </ul>
      )
 }
