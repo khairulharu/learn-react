@@ -1,12 +1,18 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { TaskDispatchContext } from "./TaskContext";
 
-export default function Task({task, onChange, onDelete}) {
+export default function Task({task}) {
      const [isEditing, setIsEditing] = useState(false);
+     const dispatch = useContext(TaskDispatchContext);
+
      let component;
 
      function handleEditTask(e) {
-          const newNote = {...task, text : e.target.value}
-          onChange(newNote);
+          dispatch({
+               ...task, 
+               type : "EDIT_TASK",
+               text : e.target.value
+          })
      }
 
      if (isEditing) {
@@ -26,15 +32,25 @@ export default function Task({task, onChange, onDelete}) {
      }
 
      function handleDoneTask(e) {
-          const newNote = {...task, done : e.target.checked}
-          onChange(newNote)
+          dispatch({
+               ...task, 
+               type : "EDIT_TASK",
+               done : e.target.checked
+          })
+     }
+
+     function handleDelete() {
+          dispatch({
+               type : "DELETE_TASK",
+               text : task.id
+          })
      }
           
      return (
           <label>
                <input type="checkbox" checked={task.done} onChange={handleDoneTask}/>
                {component}
-               <button onClick={() => onDelete(task)}>Delete</button>
+               <button onClick={handleDelete}>Delete</button>
           </label>
      )
 }

@@ -1,15 +1,20 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
+import { TaskDispatchContext } from "./TaskContext";
 
-export default function TaskForm({handleAddTask}) {
+export default function TaskForm() {
      const [item, setItem] = useState("");
+     const dispatch = useContext(TaskDispatchContext);
 
      function handleChange(e) {
           setItem(e.target.value);
      }
 
      function handleClick() {
+          dispatch({
+               type : "ADD_TASK",
+               text : item
+          })
           setItem("");
-          handleAddTask(item)
      }
 
      return (
