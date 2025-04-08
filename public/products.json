@@ -1,0 +1,27 @@
+[
+     {
+          "id" : 1,
+          "name" : "fentanyl",
+          "price" : 10
+     },
+     {
+          "id" : 2,
+          "name" : "moly",
+          "price" : 89
+     },
+     {
+          "id" : 3,
+          "name" : "lxcs",
+          "price" : 123
+     },
+     {
+          "id" : 4,
+          "name" : "purify",
+          "price" : 755
+     },
+     {
+          "id" : 5,
+          "name" : "flicker",
+          "price" : 123
+     }
+]
