@@ -13,6 +13,10 @@ export default function ProductList() {
                .then((data) => setProducts(data))
                .then(() => loaded.current = true)
           }
+
+          return () => {
+               console.log("product list component unmounted")
+          }
      });
 
      return (
