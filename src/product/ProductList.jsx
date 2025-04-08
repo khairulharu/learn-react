@@ -6,6 +6,10 @@ export default function ProductList() {
      const [load, setLoad] = useState(false);
 
      useEffect(() => {
+          console.log("call use effect with []");
+     }, [])
+
+     useEffect(() => {
           console.info("Load products");
           if(load){
                fetch("/products.json")
@@ -17,7 +21,6 @@ export default function ProductList() {
                console.log("Products List component unmounted")
           }
      }, [load]);
-
 
      function handleClick() {
           console.log("handle click")
